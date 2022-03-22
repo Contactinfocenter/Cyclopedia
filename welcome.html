@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Infoqube</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files for Google Sheets data sheetrock -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href='https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css' rel="stylesheet">   
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill" ></i><span id="user" class="message">Hello, <email-id></email-id></span>
+        <i class="success"></i> Welcome back
+      </div>
+      <div class="cta d-none d-md-block">
+        <a  class="btn btn-danger scrollto" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+       <h1 class="logo"><a href="welcome.html">Info Center</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+     <!-- <a href="welcome.html" class="logo"><img src="https://drive.google.com/uc?export=view&id=1weWi7QLz8ZWaBMokPoEOZOOl4bcnAmi6" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="welcome.html#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="welcome.html#about">Tools</a></li>
+          <li><a class="nav-link scrollto" href="welcome.html#router">Routers</a></li>
+          <li><a class="nav-link scrollto" href="welcome.html#cta">Office</a></li>
+          <li><a class="nav-link scrollto" href="welcome.html#family-package">Package</a></li>
+          <li><a class="nav-link scrollto" href="welcome.html#footer">Useful Links</a></li>                    
+          <li><a href="sms.html">SMS</a></li>
+          <li><a href="faq.html">F.A.Q</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="find.html">Know More</a></li>
+              <li><a href="wifihut.html">Wifi hut</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>         
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div id="popUp">
+        <div id="close" class="close"><i class="fa fa-times"></i></div>
+        <div id="new"><span>Downgrade Issue!</span></div>
+        <h2><guide></guide></h2>
+        <h2><guide_btrc></guide_btrc></h2>
+        
+        <br>
+       
+      </div>
+      <div id="plus"><span>NEW<br>&nbsp;<i class="fa fa-wrench"></i></span></div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
+          <div class="carousel-container">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
+          <div class="carousel-container">
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
+          <div class="carousel-container">
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- Floating Social Media bar Starts -->
+    <div class="side-bar-navigation--wrapper">
+      <div class="side-bar-navigation">
+          <div class="side-bar-navigation--element">
+                <a href="welcome.html#icon-boxes">
+                  <img src="assets/img/recycle-50.png"/>
+                    <span>Cart</span>
+                </a>
+          </div>
+          <div class="side-bar-navigation--element">
+                 <a href="welcome.html#router">
+                      <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/30/000000/external-router-internet-of-things-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
+                      <span>Contact</span>
+                 </a>
+          </div>
+          <div class="side-bar-navigation--element">
+                <a href="welcome.html#cta">
+                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/30/000000/external-router-internet-of-things-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
+                    <span>Configurators</span>
+                </a>
+          </div>
+          <div class="side-bar-navigation--element">
+                <a href="welcome.html#family-package">
+                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/30/000000/external-router-internet-of-things-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
+                    <span>Downloads</span>
+                </a>
+          </div>
+          <div class="side-bar-navigation--element">
+                <a href="welcome.html#footer">
+                    <img src="assets/img/router-60.png" alt="Locations">
+                    <span>Locations</span>
+                </a>
+          </div>
+       </div>
+    </div>
+    <!-- Floating Social Media bar Ends -->
+
+
+    <!-- ======= Icon Boxes Section ======= -->
+    <section id="icon-boxes" class="icon-boxes">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bi bi-emoji-smile"></i></div>
+              <h4 class="title"><a>Greetings (Must be Unique):</a></h4>
+              <p class="description">আসসালামুয়ালাইকুম, কার্নিভাল ইন্টারনেট থেকে “agent_name” বলছি। কিভাবে সহযোগিতা/Help করতে পারি ?</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bi bi-emoji-smile"></i></div>
+              <h4 class="title"><a>Closing (Must be Unique):</a></h4>
+              <p class="description">For Inbound: কার্নিভাল ইন্টারনেটে কল করার জন্য ধন্যবাদ ।</p>
+              <p class="description">For Outbound: কার্নিভালের সাথে থাকার জন্য ধন্যবাদ ।</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bi bi-telephone-minus"></i></div>
+              <h4 class="title"><a>Call Hang-up:</a></h4>
+              <p class="description">We need to hang-up the call immediately after closing the conversation or customer hang-ups the call. Maximum allowable time is 5 Seconds.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bi bi-telephone-x"></i></div>
+              <h4 class="title"><a>Hold time (within the call):</a></h4>
+              <p class="description">Maximum allowable Hold time is 25 sec. Need to ask customer within 25 secs, if it takes more time to check. Need to say sorry/thanks after getting back from hold.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Icon Boxes Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="icon-boxes about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">              
+              <h4 class="title"><a>Contact Options:</a></h4>
+              <p class="description">                <ul>
+                <li>Hotline: 09642363693</li>
+                <li>Email: info@carnival.com.bd</li>
+                <li>SMS: Type C [space]'6 digit user ID' & send SMS to +88044-45-652525.</li>
+                <li>WhatsApp: 01799990566</li>
+                <li>Messenger: Carnival Internet FB page</li>
+                <li>Live Chat: Website</li>
+                <li>Visual Support Center : 09642363694</li>
+                <li>Audra Whatsapp Support No : +601161561163</li>
+                <li>Audra Support email : hello@audra.io</li>
+              </ul></p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <h4 class="title"><a>Query:</a></h4>
+              <p class="description">For Retail Sales Query - We will send mail to
+                <ul>
+                  <li>salesquery@carnival.com.bd</li>
+                </ul>                
+              </p>
+              <p class="description">For Corporate Sales Query - We will send mail to
+                <ul>
+                  <li>cfb@carnival.com.bd</li>
+                </ul>                
+              </p>
+              <p class="description">After/Before payment invoice not received:
+                <ul>
+                  <li>1. Request customer to check junk/spam folders</li>
+                  <li>2. Search email by "invoice@carnival.com.bd"</li>
+                  <li>3. If still not found, create ticket under billing and Owner to Tanjina Ahmed</li>
+                </ul>               
+              </p>              
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <h4 class="title"><a>Communication for fiber cut:</a></h4>
+              <p class="description"><b>From 8AM to 6 PM:</b>
+                <ul>
+                  <li>আমরা আপনার কানেক্শনটি পরবর্তী ৮ ঘন্টার মধ্যে রিস্টোর করার চেষ্টা করবো। যদি কোনো কারণে Delay হয়, সেক্ষেত্রে টীম থেকে আপনার সাথে যোগাযোগ করা হবে। </li> 
+                </ul>
+              </p>
+              <p class="description"><b>After 6 PM:</b>
+                <ul>
+                  <li>Usually we try to restore by 8 Hours, যেতেহু বিভিন্ন লোকেশনে রাতে কাজ করার পারমিশন থাকে না , সেক্ষেত্রে আমরা সর্বোচ্চ আগামীকাল সকাল ১১ টা পর্যন্ত সময় নিচ্ছি। আমাদের টীম থেকে এই বিষয়ে আপনার সাথে যোগাযোগ করা হবে। </li> 
+                </ul>
+              </p>              
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <h4 class="title"><a>Important Notice:</a></h4>
+              <p class="description">
+                <ul>
+                  <li>If we find any retail user’s Account Status = <b>"Disabled"</b>,</li>
+                  <li> Check from CRM history to identify from which end it has been disabled.</li>
+                  <br>
+                  <li>If Disabled from Core Team: The probable reason might be DDOS attack from user’s IP.</li>
+                  <li> We need to assign Support SDE to check client's router current firmware version and if needed, it needs to upgrade to latest version.</li>
+                  <li>If Disabled from CC or by others: We need to check tickets/contact with the concern person before enabling the connection.</li>
+                </ul>                
+              </p>
+            </div>
+          </div>          
+
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Router Section ======= -->
+    <section id="router" class="router section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title txt-navy-blue">
+          <h1>Router Stock</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="customers" class="desktop_table"></div>
+          </div>
+          <div class="col-lg-6">
+            <div id="customers" class="desktop_table1"></div>
+          </div>          
+        </div>
+
+      </div>
+    </section><!-- End Router Section -->    
+
+    <!-- ======= Office Address Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="section-title">
+          <h3 txt-white>Office Address</h3>
+        </div>        
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-6 text-left text-lg-start">
+            <office_address></office_address>
+          </div>
+          <div class="col-lg-6">
+            <iframe id="app" 
+            src="https://script.google.com/macros/s/AKfycbx4Y7hu2H3BswP4tC04Fvm8sjiJSa-z1UCSQyJRIxbcJJbu2Jo6qUJkxoIptMmGNCriIg/exec" 
+            frameborder="0" scrolling="no" 
+            style="width: 100%; height: 100%;" background-color= "#eee;" >
+           </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Office Address Section -->
+
+    <!-- ======= Package Section ======= -->
+    <section id="family-package" class="section-gap family-package">
+      <div class="container">
+        
+        <div class="row mb-md-5 pb-lg-5">
+          <div class="col-md-12 text-center mb-lg-5">
+            <h1 class="section-title txt-orange" data-aos="fade-up" data-aos-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fade-up;">
+              Value Plus Packages
+            </h1>
+            <div class="section-subtitle" data-aos="fade-up" data-aos-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fade-up;">
+              <h4>With our blazing internet speeds,</h4>
+              <h6 class="mb-5">you have the power to choose a package that exactly suits your <strong>family’s Digital journey!</strong></h6>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="package-list" data-aos="fade-up" data-aos-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fade-up;">
+              <h2 class="text-uppercase txt-blue">
+                PRONTO
+              </h2>
+              <div class="package-offer">
+                <div class="value txt-blue text-center">30</div>
+                <div class="info">
+                  <span calss="text-center">Mbps</span><strong class="text-uppercase">UNLIMITED TRAFFIC</strong>
+                </div>
+                <div class="package-com-offer">
+                  <p>100Mbps YouTube <br>100Mbps Facebook <br>100Mbps BDIX</p>
+                </div>
+                <div class="package-price">
+                  1,599<span>Tk/mo</span>
+                  <h6>Installation Charge: 1,500 Tk</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="package-list" data-aos="fade-up" data-aos-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name:fade-up;">
+              <h2 class="text-uppercase txt-purple">
+                PRESTO
+              </h2>
+              <div class="package-offer">
+                <div class="value txt-purple">40</div>
+                <div class="info">
+                  <span>Mbps</span><strong class="text-uppercase">UNLIMITED TRAFFIC</strong>
+                </div>
+                <div class="package-com-offer">
+                  <p>100Mbps YouTube <br>100Mbps Facebook <br>100Mbps BDIX</p>
+                </div>
+                <div class="package-price">
+                  1,999<span>Tk/mo</span>
+                  <h6>Installation Charge: 1,500 Tk</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <div class="package-list" data-aos="fade-up" data-aos-delay=".6s" style="visibility: visible; animation-delay: 0.3s; animation-name: fade-up;">
+              <h2 class="text-uppercase txt-orange-deep">
+                PRIMO
+              </h2>
+              <div class="package-offer">
+                <div class="value txt-orange-deep">50</div>
+                <div class="info">
+                  <span>Mbps</span><strong class="text-uppercase">UNLIMITED TRAFFIC</strong>
+                </div>
+                <div class="package-com-offer">
+                  <p>100Mbps YouTube <br>100Mbps Facebook <br>100Mbps BDIX</p>
+                </div>
+                <div class="package-price">
+                  2,499<span>Tk/mo</span>
+                  <h6>Installation Charge: 1,500 Tk</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <div class="package-list" data-aos="fade-up" data-aos-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fade-up;">
+              <h2 class="text-uppercase txt-prezzo">
+                PREZZO
+              </h2>
+              <div class="package-offer">
+                <div class="value txt-prezzo">100</div>
+                <div class="info">
+                  <span>Mbps</span><strong class="text-uppercase">UNLIMITED TRAFFIC</strong>
+                </div>
+                <div class="package-com-offer">
+                  <p>100Mbps YouTube <br>100Mbps Facebook <br>100Mbps BDIX</p>
+                </div>
+                <div class="package-price">
+                  4,599<span>Tk/mo</span>
+                  <h6>Installation Charge: 1,500 Tk</h6>
+                </div>
+              </div>
+            </div>
+          </div>          
+          
+        </div>
+
+        <div class="union-package">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-md-8" data-aos="fade-up" data-aos-delay=".65s" style="visibility: visible; animation-delay: 0.65s; animation-name: fade-In-Up;">
+                      <div class="text-center">
+                      </div>
+                      <ul>
+                          <li>
+                              <p>Internet Speed</p>
+                              <h4><strong>5</strong> Mbps</h4>
+                              <h3><b>525 Tk</b></h3><h6>Installation Charge: 3,000 Tk</h6>
+                          </li>
+                          <li>
+                              <p>Internet Speed</p>
+                              <h4><strong>10</strong> Mbps</h4>
+                              <h3><b>840 Tk  </b></h3><h6>Installation Charge: 3,000 Tk</h6>
+                          </li>
+                          <li>
+                              <p>Internet Speed</p>
+                              <h4><strong>20</strong> Mbps</h4>
+                              <h3><b>1,260 Tk  </b></h3><h6>Installation Charge: 2,500 Tk</h6>
+                          </li>
+    
+                      </ul>
+    
+                  </div>
+              </div>
+          </div>
+        </div>     
+      </div>
+    </section><!-- End package Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="section-title">
+          <h2>Know more about our Packages</h2>
+        </div>
+        <table id="resultsList" class="table table-striped dt-responsive nowrap" style="width:100%">
+          <script id="packageList" type="text/x-handlebars-template"></script>
+        </table>
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>System Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://45.125.222.252/" target="_blank">SIP</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/newcrm/index.php" target="_blank">CRM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.27.149/otrs/index.pl" target="_blank">OTRS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/corporate_panel/index.php" target="_blank">CFB List</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://rural-wifi.carnival.com.bd/radiusmanager/admin.php?cont=list_users" target="_blank">Rural Radius</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Monitor Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/olt/monitoring_panel/index.php" target="_blank">Proactive Monitoring</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.27.154/cacti/index.php" target="_blank">Cacti</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://mxtoolbox.com/blacklists.aspx" target="_blank">IP Blacklists</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.24.182/login" target="_blank">LibreNMS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://45.125.222.252/" target="_blank">Roundcube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Payment Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.bkashcluster.com:9081/mr_portal/" target="_blank">bKash (GP)</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.123.9.149:8088/" target="_blank">bKash SOAP</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.11.136.25:7004/mbwebreport/" target="_blank">Rocket</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://partner.mynagad.com:8163/index" target="_blank">Nagad</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://manage.portwallet.com/admin/user" target="_blank">Portwallet</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>External Tools</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="https://app.yeshello.chat/space/63848/message" target="_blank" class="twitter"><i><img src="assets/img/yeshello.png"  width="17" height="17"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://web.whatsapp.com/" target="_blank" class="instagram"><i class="bx bi bi-whatsapp"></i></a>
+              <a href="https://login.live.com/" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Contact Center</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="">Mohammad Yousuf</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
+       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short"></i></button>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  
+
+      <script src="assets/vendor/firebase/firebase.js"></script>
+      <script src="assets/vendor/firebase/welcome.js"></script>   
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+
+  <!-- Google Sheets data table sheetrock JS File -->
+  <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+  <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
+  <script src='https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.0/dist/sheetrock.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js'></script>
+  <script src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js'></script>
+  <script src='https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js'></script>  
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gshtmltable.js"></script>
+  <script src="assets/js/gsheet.js"></script>
+  <script src="assets/js/packageList.js"></script>
+  <script src="assets/js/popupnotification.js"></script>
+  <script src="assets/js/notification.js"></script>
+
+  <script>
+		drawTables({
+            url: "https://script.google.com/macros/s/AKfycbyTtdI1uZozQL_g2t2g5LVmZ6j_j6YUerCEy9h_/exec?callback=?",
+            desktop_container: ".desktop_table",
+            responsive_container: null
+		});
+	</script>
+    <script>
+      drawTablesla({
+              url: "https://script.google.com/macros/s/AKfycbwyysK5_sh_6_kxLpcMA9VYeURvuy7R2-g-23aNK7nwd_wdlZbC/exec?callback=?",
+              desktop_container: ".desktop_table1",
+              responsive_container: null
+      });
+    </script>
+
+
+
+</body>
+
+</html>
