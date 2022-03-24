@@ -2535,7 +2535,7 @@ section {
   background-image: url("../img/TPLINK - 841.png");
 }
 #routertable tbody tr:nth-child(3)::after {
-  background-image: url(https://picsum.photos/id/1001/1024/768);
+  background-image: url("../img/Archer-C5.png");
 }
 #routertable tbody tr:nth-child(4)::after {
   background-image: url("../img/TP LINK-C6.png");
