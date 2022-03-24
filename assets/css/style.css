@@ -604,13 +604,13 @@ section {
 /*--------------------------------------------------------------
 # Icon Boxes
 --------------------------------------------------------------*/
-.icon-boxes {
+.keep-in-mind {
   padding-top: 0;
   position: relative;
   z-index: 100;
   margin-bottom: -40px;
 }
-.icon-boxes .icon-box {
+.keep-in-mind .icon-box {
   padding: 40px 30px;
   position: relative;
   overflow: hidden;
@@ -619,25 +619,25 @@ section {
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
 }
-.icon-boxes .icon {
+.keep-in-mind .icon {
   margin: 0 auto 20px auto;
   display: inline-block;
   text-align: center;
 }
-.icon-boxes .icon i {
+.keep-in-mind .icon i {
   font-size: 36px;
   line-height: 1;
   color: #f6b024;
 }
-.icon-boxes .title {
+.keep-in-mind .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
-.icon-boxes .title a {
+.keep-in-mind .title a {
   color: #05579e;
 }
-.icon-boxes .description {
+.keep-in-mind .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
