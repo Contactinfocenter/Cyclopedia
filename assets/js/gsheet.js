@@ -167,3 +167,19 @@ const iptsp = document.querySelector("iptsp");
                 iptsp.innerHTML += "<p>" + row.details + "</p>";
   });
 });
+
+/**
+* mailreply
+*/
+const url10 = "https://docs.google.com/spreadsheets/d/1KOOSkwsX5aLnzKlyIt4oVXCJHFwvewZXKxGeo4Py1og/export?format=csv&gid=721123582";
+const mailreply = document.querySelector("mailreply");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url10).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                mailreply.innerHTML += "<p>" +"<strong>" + row.subject +"</strong>" + "</p>";
+                mailreply.innerHTML += "<p>" + row.mailbody + "</p>";
+  });
+});
