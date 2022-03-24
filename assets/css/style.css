@@ -2345,13 +2345,14 @@ section {
   color: #fff;
 }
 
+
 #rwd-table tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #f5f9fc;
 }
 
-#rwd-table tr:nth-child(odd):not(:first-child) {
+#rwd-table tr:nth-child(even):not(:first-child) {
   background-color: #ebf3f9;
 }
 
@@ -2428,6 +2429,131 @@ section {
     padding: .5em !important;
   }
 }
+
+.image-container, .table-container {
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+}
+#table1 tr:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+}
+
+#table1 tr:nth-child(1)::after {
+  background-image: url(https://picsum.photos/id/10/1024/768);
+}
+#table1 tr:nth-child(2)::after {
+  background-image: url(https://picsum.photos/id/100/768/1024);
+}
+#table1 tr:nth-child(3)::after {
+  background-image: url(https://picsum.photos/id/1001/1024/768);
+}
+#table1 tr:nth-child(4)::after {
+  background-image: url(https://picsum.photos/id/1002/768/768);
+}
+
+#table1 tr {
+  background-color: #eeeeee;
+}
+
+#table1 tr:hover td{
+  background: #5bbce2;
+  color: white;
+  cursor: pointer;
+}
+
+
+#routertable {
+  margin: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  border-radius:6px;
+  overflow:hidden;
+}
+
+#routertable thead tr { 
+  height:50px;
+  background:#428bca;
+  font-size:15px;
+  color: #fff;
+  padding:8px 0;
+}
+
+#routertable tbody tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+  height:40px;
+}
+
+#routertable tbody tr:nth-child(odd):not {
+  background-color: #ebf3f9;
+}
+
+#routertable th,
+#routertable td {
+  padding: .5em 1.64em;
+}
+
+#routertable thead th {
+  background-color: #428bca;
+  color: white;
+  
+}
+
+#routertable tr:nth-child(even):hover {
+  background-color: #d8e7f3;
+}
+
+#routertable tr:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+}
+
+#routertable tbody tr:nth-child(1)::after {
+  background-image: url("../img/asus.jpg");
+}
+#routertable tbody tr:nth-child(2)::after {
+  background-image: url("../img/TPLINK - 841.png");
+}
+#routertable tbody tr:nth-child(3)::after {
+  background-image: url(https://picsum.photos/id/1001/1024/768);
+}
+#routertable tbody tr:nth-child(4)::after {
+  background-image: url("../img/TP LINK-C6.png");
+}
+#routertable tbody tr:nth-child(5)::after {
+  background-image: url(https://picsum.photos/id/10/1024/768);
+}
+#routertable tbody tr:nth-child(6)::after {
+  background-image: url(https://picsum.photos/id/100/768/1024);
+}
+#routertable tbody tr:nth-child(7)::after {
+  background-image: url(https://picsum.photos/id/1001/1024/768);
+}
+#routertable tbody tr:nth-child(8)::after {
+  background-image: url("../img/deco-m5.jpg");
+}
+
+
 
 
 
