@@ -2547,10 +2547,10 @@ section {
   background-image: url(https://picsum.photos/id/100/768/1024);
 }
 #routertable tbody tr:nth-child(7)::after {
-  background-image: url(https://picsum.photos/id/1001/1024/768);
+  background-image: url("../img/deco-m5.jpg");
 }
 #routertable tbody tr:nth-child(8)::after {
-  background-image: url("../img/deco-m5.jpg");
+  background-image: url(https://picsum.photos/id/1001/1024/768);
 }
 
 
