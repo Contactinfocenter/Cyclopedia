@@ -176,7 +176,7 @@ let drawTables = (function(){
  * Functionlity to manage drawing of Google Spreadsheets into HTML tables
  */
 
- let drawTablesla = (function(){
+ let drawTablesla_router = (function(){
 
   let settings = {};
 
