@@ -26,11 +26,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Vendor CSS Files for Google Sheets data sheetrock -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-    <link href='https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css' rel="stylesheet"> 
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -68,11 +63,12 @@
           <li><a href="welcome.html#footer">Useful Links</a></li>                    
           <li><a href="sms.html">SMS</a></li>
           <li><a href="faq.html">F.A.Q</a></li>
+          <li><a href="find.html">Know More</a></li>
           <li><a href="process.html">Process</a></li>
-          <li><a href="service-level-agreement.html">SLA</a></li>
+          <li><a class="active" href="service-level-agreement.html">SLA</a></li>
           <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a class="active" href="find.html">Know More</a></li>
+              <li><a href="tutorials.html">No Internet</a></li>
               <li><a href="wifihut.html">Wifi hut</a></li>
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
@@ -92,81 +88,29 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Find</h2>
+          <h2>Answers of Some Frequently Asked Questions</h2>
           <ol>
             <li><a href="welcome.html">Home</a></li>
-            <li>Find</li>
+            <li>SLA</li>
           </ol>
         </div>
 
       </div>
     </div><!-- End Breadcrumbs -->	
 
-    <!-- ======= Know How Section Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
-
-        <ul class="nav nav-tabs row d-flex">
-          <li class="nav-item col-3" data-aos="zoom-in">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-              <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block">Ticket Movement</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-              <i class="ri-body-scan-line"></i>
-              <h4 class="d-none d-lg-block">Owner Mapping</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-              <i class="ri-sun-line"></i>
-              <h4 class="d-none d-lg-block">FOC Client</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-              <i class="ri-store-line"></i>
-              <h4 class="d-none d-lg-block">Office Address</h4>
-            </a>
-          </li>
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up">
-          <div class="tab-pane active show" id="tab-1">
-            <div class="row text-center">
-              <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0">
-                <table class="table table-striped">
-                  <thead id="table-head"></thead>
-                  <tbody id="table-body"></tbody>
-                </table>
-              </div>
-            </div>
+    <!-- ======= SLA Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-5">
+          <div class="col-xl-10 col-md-6" data-aos="feed in" data-aos-delay="200">
+            <div id="rwd-table" class="desktop_table"></div>
           </div>
-          <div class="tab-pane" id="tab-2">
-            <div class="row">
-              <table id="resultsList1" class="table table-striped dt-responsive nowrap" style="width:100%">
-                  <script id="zoneOwner" type="text/x-handlebars-template"></script>
-             </table>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-3">
-            <div class="row">
-              <table id="resultsList2" class="table table-striped dt-responsive nowrap" style="width:100%">
-                <script id="focList" type="text/x-handlebars-template"></script>
-              </table>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-4">
-            <div class="row">
-              <office_address></office_address>
-            </div>
-          </div>
+          <div class="col-xl-2 col-md-6" data-aos="feed in" data-aos-delay="200">
+            
+          </div>         
         </div>
-
-      </div>  
-    </section><!-- End Know How Section -->
+      </div>
+    </section><!-- End SLA Section -->
 
   </main><!-- End #main -->
 
@@ -248,7 +192,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     
         <script src="assets/vendor/firebase/firebase.js"></script>
-        <script src="assets/vendor/firebase/welcome.js"></script>  
+        <script src="assets/vendor/firebase/welcome.js"></script> 
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -256,27 +200,22 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
   
-  <!-- Google Sheets data table sheetrock JS File -->
-  <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-  <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
-  <script src='https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.0/dist/sheetrock.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js'></script>
-  <script src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js'></script>
-  <script src='https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js'></script>
+  
+  
+  <script src="assets/js/gshtmltable.js"></script>
 
-
-      
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/gsheet.js"></script>
-  <script src="assets/js/ticketmovement.js"></script>
-  <script src="assets/js/sla.js"></script>
-  <script src="assets/js/foclist.js"></script>
+
+  <script>
+    drawTables({
+            url: "https://script.google.com/macros/s/AKfycbwyysK5_sh_6_kxLpcMA9VYeURvuy7R2-g-23aNK7nwd_wdlZbC/exec?callback=?",
+            desktop_container: ".desktop_table",
+            responsive_container: null
+    });
+  </script>
 
 </body>
 

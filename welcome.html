@@ -48,7 +48,7 @@
         <i class="success"></i> Welcome back
       </div>
       <div class="cta d-none d-md-block">
-        <a  class="btn btn-danger scrollto" onclick="logout()">Logout</a>
+        <a  class="btn scrollto" onclick="logout()">Logout</a>
       </div>
     </div>
   </div>
@@ -72,7 +72,8 @@
           <li><a href="sms.html">SMS</a></li>
           <li><a href="faq.html">F.A.Q</a></li>
           <li><a href="process.html">Process</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="service-level-agreement.html">SLA</a></li>
+          <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="find.html">Know More</a></li>
               <li><a href="wifihut.html">Wifi hut</a></li>
@@ -227,17 +228,19 @@
           <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up">
             <div class="icon-box">              
               <h4 class="title"><a>Contact Options:</a></h4>
-              <p class="description">                <ul>
-                <li>Hotline: 09642363693</li>
-                <li>Email: info@carnival.com.bd</li>
-                <li>SMS: Type C [space]'6 digit user ID' & send SMS to +88044-45-652525.</li>
-                <li>WhatsApp: 01799990566</li>
-                <li>Messenger: Carnival Internet FB page</li>
-                <li>Live Chat: Website</li>
-                <li>Visual Support Center : 09642363694</li>
-                <li>Audra Whatsapp Support No : +601161561163</li>
-                <li>Audra Support email : hello@audra.io</li>
-              </ul></p>
+              <p class="description">                
+                <ul>
+                  <li>Hotline: 09642363693</li>
+                  <li>Email: info@carnival.com.bd</li>
+                  <li>SMS: Type C [space]'6 digit user ID' & send SMS to +88044-45-652525.</li>
+                  <li>WhatsApp: 01799990566</li>
+                  <li>Messenger: Carnival Internet FB page</li>
+                  <li>Live Chat: Website</li>
+                  <li>Visual Support Center : 09642363694</li>
+                  <li>Audra Whatsapp Support No : +601161561163</li>
+                  <li>Audra Support email : hello@audra.io</li>
+               </ul>
+              </p>
             </div>
           </div>
 
@@ -301,33 +304,32 @@
       </div>
     </section><!-- End About Us Section -->
 
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-ag">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+          <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="400">
+            
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- ======= End of Services Section ======= -->
+
     <!-- ======= Router Section ======= -->
     <section id="router" class="router section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title txt-navy-blue">
-          <h1>Router Stock</h1>
+          <h2>Router Stock</h2>
         </div>
-
         
-          <div class="col-md-12 text-center mb-lg-5">
-            <div class="center">
-            
-          </div>
-          </div>
-        
-        <div class="row mb-md-5 pb-lg-5">
-          <div class="col-md-12 text-center mb-lg-5">
-            <div id="rwd-table" class="desktop_table1"></div>
-          </div>          
-        </div>
-
         <div class="container">
           <div class="image-container">
-          </div>
-          <div class="table-container">
-            <div id="routertable" class="desktop_table"></div>
-          </div>
+        </div>
+        <div class="table-container">
+          <div id="routertable" class="router_table"></div>
+        </div>
 
 
       </div>
@@ -342,15 +344,13 @@
         </div>        
 
         <div class="row" data-aos="fade-up">
-          <div class="col-lg-6 text-left text-lg-start">
+          <div class="col-sm-6 text-left text-lg-start">
             <office_address></office_address>
           </div>
-          <div class="col-lg-6">
-            <iframe id="app" 
-            src="https://script.google.com/macros/s/AKfycbx4Y7hu2H3BswP4tC04Fvm8sjiJSa-z1UCSQyJRIxbcJJbu2Jo6qUJkxoIptMmGNCriIg/exec" 
-            frameborder="0" scrolling="no" 
-            style="width: 100%; height: 100%;" background-color= "#eee;" >
-           </iframe>
+          <div class="col-sm-6">
+            <table id="partner" class="table table-striped dt-responsive table-success table-hover" style="width:100%">
+              <script id="partnerList" type="text/x-handlebars-template"></script>
+            </table>
           </div>
         </div>
 
@@ -611,20 +611,16 @@
   <script src="assets/js/popupnotification.js"></script>
   <script src="assets/js/notification.js"></script>
 
-  <script>
-		drawTables({
-            url: "https://script.google.com/macros/s/AKfycbyTtdI1uZozQL_g2t2g5LVmZ6j_j6YUerCEy9h_/exec?callback=?",
-            desktop_container: ".desktop_table",
-            responsive_container: null
-		});
-	</script>
-    <script>
-      drawTablesla_router({
-              url: "https://script.google.com/macros/s/AKfycbwyysK5_sh_6_kxLpcMA9VYeURvuy7R2-g-23aNK7nwd_wdlZbC/exec?callback=?",
-              desktop_container: ".desktop_table1",
-              responsive_container: null
-      });
-    </script>
+
+
+
+<script>
+  drawTablesla_router({
+          url: "https://script.google.com/macros/s/AKfycbyTtdI1uZozQL_g2t2g5LVmZ6j_j6YUerCEy9h_/exec?callback=?",
+          desktop_container: ".router_table",
+          responsive_container: null
+  });
+</script>
 
 
 

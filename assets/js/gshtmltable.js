@@ -272,7 +272,7 @@ let drawTables = (function(){
     let id = "gs_table_" + (+new Date());
       
     let container = getElement(settings.desktop_container)
-    container.insertAdjacentHTML('beforeend', "<table id='"+id+"' class='gs_desktop_table "+settings.desktop_css+"'><thead></thead><tbody></tbody></table>");
+    container.insertAdjacentHTML('beforeend', "<table id='"+id+"' class='gs_router_table "+settings.desktop_css+"'><thead></thead><tbody></tbody></table>");
 
     id = "#" + id;
 

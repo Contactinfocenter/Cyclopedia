@@ -571,8 +571,32 @@ section {
   background-color: #f1f8ff;
 }
 
+.section-ag {
+  background-color: #f3f5fa;
+}
+
 .section-bgg {
   background-color: #fffaf3;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+}
+.section-header p {
+  margin: 0 auto;
+  color: var(--color-secondary-light);
+}
+@media (min-width: 1280px) {
+  .section-header p {
+    max-width: 80%;
+  }
 }
 
 .section-title {
@@ -581,7 +605,7 @@ section {
 }
 .section-title h2 {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: capitalize;
   margin-bottom: 20px;
   padding-bottom: 0;
@@ -2339,14 +2363,14 @@ section {
   border-collapse: collapse;
 }
 
-#rwd-table tr:first-child {
+#rwd-table thead tr {
   border-top: none;
   background: #428bca;
   color: #fff;
 }
 
 
-#rwd-table tr {
+#rwd-table tbody tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #f5f9fc;
@@ -2373,7 +2397,7 @@ section {
 }
 
 #rwd-table td:before {
-  content: attr(data-th) ": ";
+  content: attr(data-th) '';
   font-weight: bold;
   width: 120px;
   display: inline-block;
@@ -2434,41 +2458,6 @@ section {
   width: 45%;
   height: 100%;
   display: inline-block;
-}
-#table1 tr:hover::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 45%;
-  height: 100%;
-  display: inline-block;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat no-repeat;
-}
-
-#table1 tr:nth-child(1)::after {
-  background-image: url(https://picsum.photos/id/10/1024/768);
-}
-#table1 tr:nth-child(2)::after {
-  background-image: url(https://picsum.photos/id/100/768/1024);
-}
-#table1 tr:nth-child(3)::after {
-  background-image: url(https://picsum.photos/id/1001/1024/768);
-}
-#table1 tr:nth-child(4)::after {
-  background-image: url(https://picsum.photos/id/1002/768/768);
-}
-
-#table1 tr {
-  background-color: #eeeeee;
-}
-
-#table1 tr:hover td{
-  background: #5bbce2;
-  color: white;
-  cursor: pointer;
 }
 
 
@@ -2557,16 +2546,16 @@ section {
 
 
 
-table caption {
+.table caption {
 	padding: .5em 0;
 }
 
-table.dataTable th,
-table.dataTable td {
+.table.dataTable th,
+.table.dataTable td {
   white-space: nowrap;
 }
 
-.p {
+.table p {
   text-align: center;
   padding-top: 140px;
   font-size: 14px;
@@ -3303,3 +3292,124 @@ a.button{
   }
 }
 
+/*--------------------------------------------------------------
+# video
+--------------------------------------------------------------*/
+
+
+/* This is purely for the demo */
+
+
+.video {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.plyr {
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+
+.purple {
+  background-color: #170F50;
+  background-image: linear-gradient(#261984 0%, #170F50 70%);
+}
+
+.wine {
+  background-color: #850178;
+  background-image: linear-gradient(#c201af 0%, #850178 70%);
+}
+
+.green {
+  background-color: #13693B;
+  background-image: linear-gradient(#1c9d58 0%, #13693B 70%);
+}
+
+.aqua {
+  background-color: #00FFED;
+  background-image: linear-gradient(#3dfff1 0%, #00FFED 70%);
+  color: #1E1F26;
+}
+
+.blue {
+  background-color: #2245AD;
+  background-image: linear-gradient(#355ed7 0%, #2245AD 70%);
+}
+
+.red {
+  background-color: #a90e0e;
+  background-image: linear-gradient(#e21313 0%, #a90e0e 70%);
+}
+
+.orange {
+  background-color: #fa952a;
+  background-image: linear-gradient(#fbb366 0%, #fa952a 70%);
+}
+
+.yellow {
+  background-color: #f7ea1c;
+  background-image: linear-gradient(#f9ef57 0%, #f7ea1c 70%);
+}
+
+.pink {
+  background-color: #FFA4F9;
+  background-image: linear-gradient(#ffe1fd 0%, #FFA4F9 70%);
+  color: #1E1F26;
+}
+
+.magenta {
+  background-color: #AD2266;
+  background-image: linear-gradient(#d73584 0%, #AD2266 70%);
+}
+
+.grid-parent {
+  display: grid;
+}
+
+.flex-parent {
+  display: flex;
+  min-height: 0px;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.content {
+  font-size: 2rem;
+  border: 2px solid #AD2266;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+button {
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: #2245AD;
+  padding: 15px 40px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+button:hover {
+  background: #1b378b;
+}
+button.block {
+  display: block;
+  width: 200px;
+  color: #000000;
+}
+button.block:hover {
+  background: #AD2266;
+}
+button.margin-auto {
+  margin: 0 auto;
+}
+button.margin-right {
+  margin-right: 20px;
+}
