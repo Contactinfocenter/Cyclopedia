@@ -44,7 +44,7 @@
   <div id="topbar" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill" ></i><span id="user" class="message">Hello, <email-id></email-id></span>
+        <i class="bi bi-person-check" ></i><span id="user" class="message">Hello, <email-id></email-id></span>
         <i class="success"></i> Welcome back
       </div>
       <div class="cta d-none d-md-block">
@@ -123,6 +123,12 @@
           </div>
         </div>
 
+        <!-- Slide 4 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-4.jpg);">
+          <div class="carousel-container">
+          </div>
+        </div>        
+
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -136,6 +142,7 @@
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
     </div>
+    <div class="hero-bottom-shape"></div>
   </section><!-- End Hero -->
 
   <main id="main">
@@ -144,42 +151,74 @@
     <div class="side-bar-navigation--wrapper">
       <div class="side-bar-navigation">
           <div class="side-bar-navigation--element">
-                <a href="welcome.html#keep-in-mind">
-                  <img src="assets/img/icons8-c-100.png"/>
-                    <span>About Us</span>
+                <a href="welcome.html#about-carnival">
+                  <img src="assets/img/information-100.png"/>
+                    <span>information</span>
                 </a>
           </div>
           <div class="side-bar-navigation--element">
                  <a href="welcome.html#router">
-                      <img src="assets/img/mind-100.png"/>
-                      <span>Keep in Mind</span>
+                      <img src="assets/img/r-100.png"/>
+                      <span>router stock</span>
                  </a>
           </div>
           <div class="side-bar-navigation--element">
                 <a href="welcome.html#cta">
-                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/30/000000/external-router-internet-of-things-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
-                    <span>Configurators</span>
+                  <img src="assets/img/a-100.png"/>
+                    <span>address</span>
                 </a>
           </div>
           <div class="side-bar-navigation--element">
                 <a href="welcome.html#family-package">
-                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/30/000000/external-router-internet-of-things-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
-                    <span>Downloads</span>
+                  <img src="assets/img/p-100.png"/>
+                    <span>packages</span>
                 </a>
           </div>
           <div class="side-bar-navigation--element">
                 <a href="welcome.html#footer">
-                    <img src="assets/img/router-60.png" alt="Locations">
-                    <span>Locations</span>
+                  <img src="assets/img/l-100.png"/>
+                    <span>links</span>
                 </a>
           </div>
        </div>
     </div>
     <!-- Floating Social Media bar Ends -->
 
+    <!-- ======= About carnival Section ======= -->
+    <section id="about-carnival" class="about-carnival">
+      
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">
+        <!--  <div class="icon"><i class="bx bi bi-emoji-smile"></i></div>-->
+              <about_1></about_1>              
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">
+           <!--   <div class="icon"><i class="bx bi bi-emoji-smile"></i></div>-->
+              <about_2></about_2>              
+            </div>            
+          </div>                    
+        </div>
+        <div class="row py-4">
+          <div class="col-md-6 col-lg-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">
+        <!--  <div class="icon"><i class="bx bi bi-emoji-smile"></i></div>-->
+              <about_3></about_3>              
+            </div>
+          </div>          
+        </div>        
+      </div>
+      
+    </section>
+    <!-- ======= End of About Carnival Section ======= -->
+
 
     <!-- ======= Icon Boxes Section ======= -->
-    <section id="keep-in-mind" class="keep-in-mind">
+    <section id="keep-in-mind" class="keep-in-mind about">
       <div class="container">
 
         <div class="row">
@@ -217,12 +256,12 @@
           </div>
 
         </div>
-
+        
       </div>
     </section><!-- End Icon Boxes Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="keep-in-mind about">
+    <section id="about" class="keep-in-mind">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up">
@@ -266,8 +305,8 @@
               </p>              
             </div>
           </div>
-        </div><br>
-        <div class="row">
+        </div>
+        <div class="row py-4">
           <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-6 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <h4 class="title"><a>Communication for fiber cut:</a></h4>
@@ -304,22 +343,11 @@
       </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-ag">
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-4">
-          <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="400">
-            
-          </div>  
-        </div>
-      </div>
-    </section>
-    <!-- ======= End of Services Section ======= -->
-
     <!-- ======= Router Section ======= -->
-    <section id="router" class="router section-bg">
+    <section id="router" class="router section-bg" style= "background-image: url('https://carnival.com.bd/wp-content/themes/carnival/assets/img/shape/feature-shape.svg')">
+      
       <div class="container" data-aos="fade-up">
-
+        
         <div class="section-title txt-navy-blue">
           <h2>Router Stock</h2>
         </div>
@@ -336,11 +364,12 @@
     </section><!-- End Router Section -->    
 
     <!-- ======= Office Address Section ======= -->
-    <section id="cta" class="cta">
+    <section id="cta" class="cta ">
+      
       <div class="container">
 
         <div class="section-title">
-          <h3 txt-white>Office Address</h3>
+          <h2>Office Address</h2>
         </div>        
 
         <div class="row" data-aos="fade-up">
@@ -359,6 +388,7 @@
 
     <!-- ======= Package Section ======= -->
     <section id="family-package" class="section-gap family-package">
+      
       <div class="container">
         
         <div class="row mb-md-5 pb-lg-5">
@@ -507,6 +537,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
+      
       <div class="container">
         <div class="row">
 

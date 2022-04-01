@@ -29,8 +29,8 @@
 
      function loadData() {
        // Spreadsheet ID
-       const spreadsheetId = "1sEQJZyVnlECwhNEzqx3NQK6vXQiJ3jtge7K0dbN1UsM";
-       const range = "A:D";
+       const spreadsheetId = "1-do3Pup4_sDLoYtCW5nSoWiGgmrnVk0XMUPqbyHVAHA";
+       const range = "A:E";
        getPublicValues({ spreadsheetId, range }, displayResult2);
      }
 

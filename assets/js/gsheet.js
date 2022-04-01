@@ -1,13 +1,4 @@
 /**
-* Template Name: Kelly - v4.7.0
-* Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-
-
-/**
 * Process details
 */
 const url = "https://docs.google.com/spreadsheets/d/11O8HvOKQmr1PxuTwfExElwuEaZvRVK6oKbjuH9t4UsU/export?format=csv";
@@ -58,7 +49,7 @@ const sms121 = document.querySelector("sms121");
 /**
 * SMS details
 */
-const url3 = "https://docs.google.com/spreadsheets/d/1KOOSkwsX5aLnzKlyIt4oVXCJHFwvewZXKxGeo4Py1og/export?format=csv";
+const url3 = "https://docs.google.com/spreadsheets/d/1KOOSkwsX5aLnzKlyIt4oVXCJHFwvewZXKxGeo4Py1og/export?format=csv&gid=0";
 const sms = document.querySelector("sms");
      //sms.innerHTML = "<p> Loading...</p>";
     fetch(url3).then(result =>result.text()).then(function(csvtext){
@@ -131,7 +122,7 @@ const office_address = document.querySelector("office_address");
        }).then(function(csv){
        //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
          csv.forEach(function(row){
-                office_address.innerHTML += "<h5>" +"<strong>" + row.location +"</strong>" + "</h5>";
+                office_address.innerHTML += "<h5>"  + row.location + "</h5>";
                 office_address.innerHTML += "<p>" + row.address + "</p>";
   });
 });
@@ -181,5 +172,82 @@ const mailreply = document.querySelector("mailreply");
          csv.forEach(function(row){
                 mailreply.innerHTML += "<p>" +"<strong>" + row.subject +"</strong>" + "</p>";
                 mailreply.innerHTML += "<p>" + row.mailbody + "</p>";
+  });
+});
+
+/**
+* No Internet
+*/
+
+const url11 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=1781322623";
+const nointernet = document.querySelector("nointernet");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url11).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                nointernet.innerHTML += "<p>" +"<strong>" + row.step +"</strong>" + "</p>";
+                nointernet.innerHTML += "<p>" + row.process + "</p>";
+  });
+});
+
+/**
+* Slow Speed
+*/
+
+const url12 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=584583435";
+const slowspeed = document.querySelector("slowspeed");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url12).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                slowspeed.innerHTML += "<p>" +"<strong>" + row.step +"</strong>" + "</p>";
+                slowspeed.innerHTML += "<p>" + row.process + "</p>";
+  });
+});
+
+/**
+* About Carnival
+*/
+
+const url13 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=1105087992";
+const about_1 = document.querySelector("about_1");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url13).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                about_1.innerHTML += "<p>" + row.title + "</p>";
+                about_1.innerHTML += "<p>" + row.description + "</p>";
+  });
+});
+
+const url14 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=1105087992";
+const about_2 = document.querySelector("about_2");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url14).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                about_2.innerHTML += "<p>" + row.why + "</p>";
+                about_2.innerHTML += "<p>" + row.features + "</p>";
+  });
+});
+
+const url15 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=1105087992";
+const about_3 = document.querySelector("about_3");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url15).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                about_3.innerHTML += "<p>" + row.device + "</p>";
+                about_3.innerHTML += "<p>" + row.infrastructure + "</p>";
   });
 });
