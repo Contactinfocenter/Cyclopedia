@@ -17,5 +17,3 @@
       // explicitly.
       $(options.user.target).DataTable();
     }
-
-    $('table').DataTable();

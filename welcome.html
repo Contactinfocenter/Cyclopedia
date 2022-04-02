@@ -44,10 +44,10 @@
   <div id="topbar" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-person-check" ></i><span id="user" class="message">Hello, <email-id></email-id></span>
+        <i class="ri-user-line"></i><span id="user" class="message">Hello, <email-id></email-id></span>
         <i class="success"></i> Welcome back
       </div>
-      <div class="cta d-none d-md-block">
+      <div class="office-address d-none d-md-block">
         <a  class="btn scrollto" onclick="logout()">Logout</a>
       </div>
     </div>
@@ -63,16 +63,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="welcome.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="welcome.html#about">Tools</a></li>
-          <li><a class="nav-link scrollto" href="welcome.html#router">Routers</a></li>
-          <li><a class="nav-link scrollto" href="welcome.html#cta">Office</a></li>
-          <li><a class="nav-link scrollto" href="welcome.html#family-package">Package</a></li>
-          <li><a class="nav-link scrollto" href="welcome.html#footer">Useful Links</a></li>                    
-          <li><a href="sms.html">SMS</a></li>
-          <li><a href="faq.html">F.A.Q</a></li>
+          <li><a class="nav-link scrollto active" href="welcome.html#hero">Home</a></li>                  
+          <li><a href="sms & mail template.html">SMS & Mail</a></li>
+          <li><a href="frequently-ask-question.html">F.A.Q</a></li>
           <li><a href="process.html">Process</a></li>
           <li><a href="service-level-agreement.html">SLA</a></li>
+          <li><a href="tutorials.html">Tutorials</a></li>
+          <li><a href="olt-information.html">OLT Info</a></li>
           <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="find.html">Know More</a></li>
@@ -163,7 +160,7 @@
                  </a>
           </div>
           <div class="side-bar-navigation--element">
-                <a href="welcome.html#cta">
+                <a href="welcome.html#office-address">
                   <img src="assets/img/a-100.png"/>
                     <span>address</span>
                 </a>
@@ -175,7 +172,7 @@
                 </a>
           </div>
           <div class="side-bar-navigation--element">
-                <a href="welcome.html#footer">
+                <a href="welcome.html#link">
                   <img src="assets/img/l-100.png"/>
                     <span>links</span>
                 </a>
@@ -364,19 +361,17 @@
     </section><!-- End Router Section -->    
 
     <!-- ======= Office Address Section ======= -->
-    <section id="cta" class="cta ">
-      
+    <section id="office-address" class="office-address ">      
       <div class="container">
-
         <div class="section-title">
           <h2>Office Address</h2>
-        </div>        
-
+        </div>      
         <div class="row" data-aos="fade-up">
           <div class="col-sm-6 text-left text-lg-start">
             <office_address></office_address>
           </div>
           <div class="col-sm-6">
+            <h5>Partners Contact details</h5>
             <table id="partner" class="table table-striped dt-responsive table-success table-hover" style="width:100%">
               <script id="partnerList" type="text/x-handlebars-template"></script>
             </table>
@@ -535,13 +530,13 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
+  <footer id="link">
+    <div class="link-top">
       
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-6 link-links">
             <h4>System Tools</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="http://45.125.222.252/" target="_blank">SIP</a></li>
@@ -552,7 +547,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-6 link-links">
             <h4>Monitor Tools</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/olt/monitoring_panel/index.php" target="_blank">Proactive Monitoring</a></li>
@@ -563,7 +558,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-6 link-links">
             <h4>Payment Tools</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="https://www.bkashcluster.com:9081/mr_portal/" target="_blank">bKash (GP)</a></li>
@@ -574,7 +569,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-info">
+          <div class="col-lg-3 col-md-6 link-info">
             <h3>External Tools</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
@@ -593,9 +588,6 @@
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Contact Center</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="">Contact Center</a>
       </div>
     </div>
   </footer><!-- End Footer -->

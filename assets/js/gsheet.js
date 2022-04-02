@@ -41,7 +41,7 @@ const sms121 = document.querySelector("sms121");
     }).then(function(csv){
     //sms121.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
       csv.forEach(function(row){
-             sms121.innerHTML += "<h5>" +"<strong>" + row.stext +"</strong>" + "</h5>";
+             sms121.innerHTML += "<p>" +"<strong>" + row.stext +"</strong>" + "</p>";
              sms121.innerHTML += "<p>" + row.sbody + "</p>";
   });
 });
@@ -57,7 +57,7 @@ const sms = document.querySelector("sms");
     }).then(function(csv){
     //sms.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
       csv.forEach(function(row){
-             sms.innerHTML += "<h5>" +"<strong>" + row.stext +"</strong>" + "</h5>";
+             sms.innerHTML += "<h6>" +"<strong>" + row.stext +"</strong>" + "</h6>";
              sms.innerHTML += "<p>" + row.sbody + "</p>";
   });
 });
@@ -249,5 +249,22 @@ const about_3 = document.querySelector("about_3");
          csv.forEach(function(row){
                 about_3.innerHTML += "<p>" + row.device + "</p>";
                 about_3.innerHTML += "<p>" + row.infrastructure + "</p>";
+  });
+});
+
+/**
+* OLT info
+*/
+
+const url16 = "https://docs.google.com/spreadsheets/d/1-do3Pup4_sDLoYtCW5nSoWiGgmrnVk0XMUPqbyHVAHA/export?format=csv&gid=0";
+const oltcommand = document.querySelector("oltcommand");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url16).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                oltcommand.innerHTML += "<p>" + row.olt + "</p>";
+                oltcommand.innerHTML += "<p>" + row.command + "</p>";
   });
 });
