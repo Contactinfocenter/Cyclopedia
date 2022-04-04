@@ -2659,6 +2659,14 @@ section {
   color: #707070;
 }
 
+.txt-green {
+  color: #8ac440;
+}
+
+.txt-red {
+  color: #AA0114;
+}
+
 .bg-orange {
   background: #f05a2a;
 }

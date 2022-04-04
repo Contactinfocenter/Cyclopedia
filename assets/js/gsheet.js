@@ -268,3 +268,20 @@ const oltcommand = document.querySelector("oltcommand");
                 oltcommand.innerHTML += "<p>" + row.command + "</p>";
   });
 });
+
+/**
+* Churn offer
+*/
+
+const url17 = "https://docs.google.com/spreadsheets/d/1WxAPDuYET_K2z8LiPHY1oF_ljQKUxL_REokZFv159sU/export?format=csv&gid=956523106";
+const churnback = document.querySelector("churnback");
+    //office_address.innerHTML = "<p> Loading...</p>";
+    fetch(url17).then(result =>result.text()).then(function(csvtext){
+      return csv().fromString(csvtext);
+       }).then(function(csv){
+       //office_address.innerHTML = "<code>" + JSON.stringify(csv) + "</code>";
+         csv.forEach(function(row){
+                churnback.innerHTML += "<p>" + row.churn + "</p>";
+                churnback.innerHTML += "<p>" + row.validity + "</p>";
+  });
+});
