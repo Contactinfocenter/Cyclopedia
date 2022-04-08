@@ -623,11 +623,11 @@ section {
 
 .section-title h3 {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: capitalize;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: #fff;
+  color: #04AA6D;
 }  
 .section-title p {
   margin-bottom: 0;
