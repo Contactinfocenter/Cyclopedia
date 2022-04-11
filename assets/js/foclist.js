@@ -17,3 +17,23 @@
       // explicitly.
       $(options.user.target).DataTable();
     }
+
+     /**
+   * FOC details mine
+   */
+      $(document).ready( function () {
+        $.getJSON( "https://script.google.com/macros/s/AKfycbw7QDsQaA1l5-qe4ZsqgxVFj85_LaZe7tUk-y9UKilGebTOHJIU/exec", function( data ) {
+        var table = $('#foclist').DataTable({
+          responsive: true,
+          data: data,
+          
+                  columns: [
+                    {data: 'sl'},
+                    {data: 'client'},
+                    {data: 'contact'},
+                    {data: 'cid'}
+                  ]
+      
+                });
+      } );
+      });

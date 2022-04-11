@@ -26,10 +26,102 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Vendor CSS Files for Google Sheets data sheetrock -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-    <link href='https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css' rel="stylesheet"> 
+    	<!--Regular Datatables CSS-->
+      <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+      <!--Responsive Extension Datatables CSS-->
+      <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+      <style>
+        /*Overrides for Tailwind CSS */
+    
+        /*Form fields*/
+        .dataTables_wrapper select,
+        .dataTables_wrapper .dataTables_filter input {
+          color: #4a5568;
+          /*text-gray-700*/
+          padding-left: 1rem;
+          /*pl-4*/
+          padding-right: 1rem;
+          /*pl-4*/
+          padding-top: .5rem;
+          /*pl-2*/
+          padding-bottom: .5rem;
+          /*pl-2*/
+          line-height: 1.25;
+          /*leading-tight*/
+          border-width: 2px;
+          /*border-2*/
+          border-radius: .25rem;
+          border-color: #edf2f7;
+          /*border-gray-200*/
+          background-color: #edf2f7;
+          /*bg-gray-200*/
+        }
+    
+        /*Row Hover*/
+        table.dataTable.hover tbody tr:hover,
+        table.dataTable.display tbody tr:hover {
+          background-color: #ebf4ff;
+          /*bg-indigo-100*/
+        }
+    
+        /*Pagination Buttons*/
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+          font-weight: 700;
+          /*font-bold*/
+          border-radius: .25rem;
+          /*rounded*/
+          border: 1px solid transparent;
+          /*border border-transparent*/
+        }
+    
+        /*Pagination Buttons - Current selected */
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+          color: #fff !important;
+          /*text-white*/
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+          /*shadow*/
+          font-weight: 700;
+          /*font-bold*/
+          border-radius: .25rem;
+          /*rounded*/
+          background: #667eea !important;
+          /*bg-indigo-500*/
+          border: 1px solid transparent;
+          /*border border-transparent*/
+        }
+    
+        /*Pagination Buttons - Hover */
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+          color: #fff !important;
+          /*text-white*/
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+          /*shadow*/
+          font-weight: 700;
+          /*font-bold*/
+          border-radius: .25rem;
+          /*rounded*/
+          background: #667eea !important;
+          /*bg-indigo-500*/
+          border: 1px solid transparent;
+          /*border border-transparent*/
+        }
+    
+        /*Add padding to bottom border */
+        table.dataTable.no-footer {
+          border-bottom: 1px solid #e2e8f0;
+          /*border-b-1 border-gray-300*/
+          margin-top: 0.75em;
+          margin-bottom: 0.75em;
+        }
+    
+        /*Change colour of responsive icon*/
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
+        table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+          background-color: #667eea !important;
+          /*bg-indigo-500*/
+        }
+      </style>      
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -60,20 +152,18 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="welcome.html">Home</a></li>
-          <li><a href="welcome.html#about">Tools</a></li>
-          <li><a href="welcome.html#router">Routers</a></li>
-          <li><a href="welcome.html#cta">Office</a></li>
-          <li><a href="welcome.html#family-package">Package</a></li>
-          <li><a href="welcome.html#footer">Useful Links</a></li>                    
-          <li><a href="sms.html">SMS</a></li>
+          <li><a class="nav-link scrollto active" href="welcome.html#hero">Home</a></li>                  
+          <li><a href="sms&mail.html">SMS & Mail</a></li>
           <li><a href="faq.html">F.A.Q</a></li>
           <li><a href="process.html">Process</a></li>
           <li><a href="service-level-agreement.html">SLA</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="offers.html">Carnival Offer</a></li>
+          <li><a href="tutorials.html">Tutorials</a></li>
+          <li><a href="olt-information.html">OLT Info</a></li>
+          <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="find.html">Know More</a></li>
-              <li><a class="active" href="wifihut.html">Wifi hut</a></li>
+              <li><a href="wifihut.html">Wifi hut</a></li>
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
@@ -113,49 +203,149 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="schedule-tab">
-              <ul class="nav nav-pills text-center">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#no-internet" data-bs-toggle="pill">
-                    FOC Client List
-                    <span></span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#slow-speed" data-bs-toggle="pill">
-                  Slow Speed
-                    <span></span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#wifi-hut" data-bs-toggle="pill">
-                  Wifi hut
-                    <span></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="schedule-contents bg-schedule">
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active schedule-item" id="no-internet">
-                  <nointernet></nointernet>
-                </div>
-                <div class="tab-pane fade schedule-item" id="slow-speed">
-                  <slowspeed></slowspeed>
-                </div>
-                <div class="tab-pane fade schedule-item" id="wifi-hut">
-                  <wifihut></wifihut>
-                </div>
-              </div>
-            </div>
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">FOC CLient list</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Transmission team</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab3">Corrupti</a></li>
+            </ul><!-- End Tabs -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="tab1">
+
+              </div><!-- End Tab 1 Content -->
             
-          </div>
+              <div class="tab-pane fade show" id="tab2">
+
+                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                </div>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
+                </div>
+                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+
+              </div><!-- End Tab 2 Content -->
+
+              <div class="tab-pane fade show" id="tab3">
+
+                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                </div>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
+                </div>
+                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+
+              </div><!-- End Tab 3 Content -->            
+
         </div>
+
+
+
+
+
+
+        </div>
+
       </div>
     </section>
     <!-- End Blog Section -->
+    <section class="about-carnival">      
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h3>Event <span class="alternate">Schedule</span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row feture-tabs g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+               <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab4">FOC CLient list</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab5">Transmission team</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab6">Corrupti</a></li>
+            </ul><!-- End Tabs -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab4">
+                <div class="row">
+                  <div class="col-md-6 col-lg-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="icon-box">
+                      <table id="foclist" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                          <tr>
+                          <th data-priority="1">Sl</th>
+                          <th data-priority="3">Name</th>
+                          <th data-priority="4">Contact No</th>
+                          <th data-priority="5">Carnival ID</th>          
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>              
+                    </div>
+                  </div>                   
+                </div>
+
+              </div><!-- End Tab 1 Content -->
+              <div class="tab-pane fade show active" id="tab5">
+                <div class="row">
+                  <div class="col-md-6 col-lg-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="icon-box">
+                      <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                          <tr>
+                            <th data-priority="1">Sl</th>
+                            <th data-priority="3">Name</th>
+                            <th data-priority="4">Contact No</th>
+                            <th data-priority="5">Carnival ID</th>          
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>              
+                    </div>
+                  </div>                   
+                </div>                
+              </div>
+              <div class="tab-pane fade show active" id="tab6"></div>
+            </div>
+        </div>
+       
+      </div>
+      
+    </section>
 
   </main><!-- End #main -->
 
@@ -246,29 +436,55 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
-  
-  <!-- Google Sheets data table sheetrock JS File -->
-  <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-  <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
-  <script src='https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.0/dist/sheetrock.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js'></script>
-  <script src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js'></script>
-  <script src='https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js'></script>
 
-  <!-- Google API -->
-  <script src="https://apis.google.com/js/api.js"></script>
-  <!-- easyData -->
-  <script type="text/javascript" src="assets/js/easyData-google-sheets.js"></script>
-      
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!--Datatables -->
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+ <script>
+   $(document).ready( function () {
+  $.getJSON( "https://script.google.com/macros/s/AKfycbw7QDsQaA1l5-qe4ZsqgxVFj85_LaZe7tUk-y9UKilGebTOHJIU/exec", function( data ) {
+  var table = $('#foclist').DataTable({
+    responsive: true,
+    data: data,
+    
+            columns: [
+              {data: 'sl'},
+              {data: 'client'},
+              {data: 'contact'},
+              {data: 'cid'}
+            ]
+
+          });
+} );
+});
+
+$(document).ready( function () {
+$.getJSON( "https://script.google.com/macros/s/AKfycbwN2zgWTv0uoMYfjw_7Dn6ZTXs4efAXb0IQLPGl0F0lmloXekUI/exec", 
+function( data ) {
+  var table = $('#example').DataTable({
+    responsive: true,
+    data: data,
+    
+            columns: [
+              {data: 'zone'},
+              {data: 'name'},
+              {data: 'msisdn'},
+              {data: 'ipphone'}
+            ]
+
+          });
+} );
+});
+ </script>
+ 
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/gsheet.js"></script>
-  <script src="assets/js/ticketmovement.js"></script>
-  <script src="assets/js/sla.js"></script>
-  <script src="assets/js/foclist.js"></script>
+
+
 
 </body>
 
