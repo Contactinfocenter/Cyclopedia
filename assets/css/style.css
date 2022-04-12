@@ -2586,16 +2586,16 @@ section {
   background-image: url("../img/TP LINK-C6.png");
 }
 #routertable tbody tr:nth-child(5)::after {
-  background-image: url(https://picsum.photos/id/10/1024/768);
+  background-image: url("../img/TP_link_deco_m4_1_pack.png");
 }
 #routertable tbody tr:nth-child(6)::after {
-  background-image: url(https://picsum.photos/id/100/768/1024);
+  background-image: url("../img/deco m4 2 pack.png");
 }
 #routertable tbody tr:nth-child(7)::after {
-  background-image: url("../img/deco-m5.jpg");
+  background-image: url("../img/deco m5 2pac.png");
 }
 #routertable tbody tr:nth-child(8)::after {
-  background-image: url(https://picsum.photos/id/1001/1024/768);
+  background-image: url("../img/Mikrotik RB 951.png");
 }
 
 
