@@ -144,9 +144,9 @@
       <div class="container" data-aos="fade-up">
 
           <div class="row">
-            <div class="col-sm-8">
-              <table id="olt" class="table table-striped dt-responsive table-hover" style="width:100%">
-                <script id="oltList" type="text/x-handlebars-template"></script>
+            <div class="col-sm-12">
+              <table id="owner" class="table table-striped dt-responsive table-hover" style="width:100%">
+                <script id="ownerList" type="text/x-handlebars-template"></script>
             </table>
             </div>
           </div>
@@ -256,9 +256,9 @@
   <script>
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1RFapR6ueoWyZvVwmByrKwh4im6Chm8zfWRrS2J49QG4/edit#gid=0';
     
-    var sheetrockResultsList = Handlebars.compile($('#oltList').html());
+    var sheetrockResultsList = Handlebars.compile($('#ownerList').html());
     
-    $('#olt').sheetrock({
+    $('#owner').sheetrock({
       url: mySpreadsheet,
       query: 'select A,B,C,D,E',
       callback : makeSortable
