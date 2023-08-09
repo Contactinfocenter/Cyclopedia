@@ -68,7 +68,7 @@
           <li><a href="offers.html">Carnival Offer</a></li>
           <li><a href="tutorials.html">Tutorials</a></li>
           <li><a href="olt-information.html">OLT Info</a></li>
-          <li><a class="active" href="zonewiseowner.html">OLT Info</a></li>
+          <li><a class="active" href="zonewiseowner.html">Owner</a></li>
           <li><a href="contacts.html">Contacts</a></li>
   <!--    <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -145,9 +145,9 @@
 
           <div class="row">
             <div class="col-sm-8">
-              <table id="resultsList" class="table table-striped dt-responsive nowrap" style="width:100%">
-                <script id="zoneOwner" type="text/x-handlebars-template"></script>
-              </table>
+              <table id="olt" class="table table-striped dt-responsive table-hover" style="width:100%">
+                <script id="oltList" type="text/x-handlebars-template"></script>
+            </table>
             </div>
           </div>
       </div>
@@ -252,8 +252,24 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/ticketmovement.js"></script>
   
+  <script>
+    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1-do3Pup4_sDLoYtCW5nSoWiGgmrnVk0XMUPqbyHVAHA/edit#gid=0';
+    
+    var sheetrockResultsList = Handlebars.compile($('#oltList').html());
+    
+    $('#olt').sheetrock({
+      url: mySpreadsheet,
+      query: 'select A,B,C,D,E',
+      callback : makeSortable
+    });
+    
+    function makeSortable(error, options, response) {
+      // Target is not a jQuery object, so we need to call jQuery
+      // explicitly.
+      $(options.user.target).DataTable();
+    }
+    </script>
 
 </body>
 
