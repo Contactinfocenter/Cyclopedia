@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Process | C-Academy</title>
+  <title>OLT-Information | C-Academy</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,6 +25,11 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files for Google Sheets data sheetrock -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href='https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css' rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -58,13 +63,13 @@
           <li><a href="welcome.html">Home</a></li>                  
           <li><a href="sms&mail.html">SMS & Mail</a></li>
           <li><a href="faq.html">F.A.Q</a></li>
-          <li><a class="active"href="process.html">Process</a></li>
+          <li><a href="process.html">Process</a></li>
           <li><a href="service-level-agreement.html">SLA</a></li>
           <li><a href="offers.html">Carnival Offer</a></li>
           <li><a href="tutorials.html">Tutorials</a></li>
           <!--<li><a href="olt-information.html">OLT Info</a></li>-->
           <li><a href="zonewiseowner.html">Owner</a></li>
-          <li><a href="mediation.html">Owner</a></li>
+          <li><a class="active" href="mediation.html">Owner</a></li>
           <li><a href="contacts.html">Contacts</a></li>
   <!--    <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -73,7 +78,7 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li> -->         
+          </li> -->        
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -123,41 +128,33 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">
+
         <div class="d-flex justify-content-between align-items-center">
-          <h2>A process is a series or set of activities that interact to produce a result; it may occur once-only or be recurrent or periodic.</h2>
+          <h2>Zone wise owner</h2>
           <ol>
             <li><a href="welcome.html">Home</a></li>
-            <li>Process</li>
+            <li>Mediation Group</li>
           </ol>
         </div>
 
       </div>
     </div><!-- End Breadcrumbs -->	
 
-    <!-- ======= Blog Section ======= -->
-    <section id="process" class="process">
+    <!-- ======= SMS Section ======= -->
+    <section id="section" class="section">
       <div class="container" data-aos="fade-up">
-        <div class="row gy-5">
-          <div class="col-xl-9 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <pro></pro>
-          </div>
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="1000">
-            <img src="assets/img/Process-Managenment.webp" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </section><!-- End Blog Section -->
 
-        <!-- ======= Blog Section ======= -->
-        <!--
-        <section id="process" class="process">
-          <div class="container" data-aos="fade-up">
-            <div class="row">
-              <iptsp></iptsp> 
+          <div class="row">
+            <div class="col-sm-12">
+              <table
+                id="example"
+                class="table table-striped table-bordered dt-responsive mt-2 mb-2"
+                style="width: 100%">
+              </table>
             </div>
           </div>
-        </section>-->
-        <!-- End Blog Section -->
+      </div>
+    </section><!-- End SMS Section -->
 
   </main><!-- End #main -->
 
@@ -225,9 +222,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-   <!--    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-short"></i></button>-->
-   
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
@@ -238,7 +233,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     
         <script src="assets/vendor/firebase/firebase.js"></script>
-        <script src="assets/vendor/firebase/welcome.js"></script>  
+        <script src="assets/vendor/firebase/welcome.js"></script>   
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -249,10 +244,60 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
   <script src="assets/js/gsheet.js"></script>
-  
+
+  <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+  <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
+  <script src='https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.0/dist/sheetrock.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js'></script>
+  <script src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js'></script>
+  <script src='https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js'></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script type="text/javascript">
+    $(document).ready(function () {
+     var dataTable = $("#example").DataTable({
+   ajax: "https://script.google.com/macros/s/AKfycbznZyiHLBCcR7XJDq1ZByhMnXokMpCZlC5K0c8fxZrNZOHzvgiGQgEu4afev6Q9egSH/exec",
+   columns: [
+   {
+       title: "username",
+       data: "username",
+     },
+     {
+       title: "srvname",
+       data: "srvname",
+     },
+     {
+       title: "name",
+       data: "name",
+     },
+      {
+       title: "status",
+       data: "status",
+     },
+
+      {
+       title: "Address",
+       data: "address",
+     },
+
+      {
+       title: "Remarks",
+       data: "remarks",
+     },
+   ],
+   rowId: "username",
+   liveAjax: true,
+ });
+ // https://docs.google.com/spreadsheets/d/1QXoN4hQVPT2RqNt364SF4Hl9vNekRDCUtcLuxDtr6PI/edit#gid=0 Refresh the DataTable data every 5 seconds
+ setInterval(function () {
+     dataTable.ajax.reload(null, false); // The second parameter prevents paging reset
+   }, 2000); // 5000 milliseconds (5 seconds)
+});
+
+ </script>
 
 </body>
 
