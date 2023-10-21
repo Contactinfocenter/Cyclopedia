@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>OLT-Information | C-Academy</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+    <!-- Include Flatpickr Datepicker CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <style>
+
+    .form-con {
+      max-width: 600px;
+      margin-top: -30px !important;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .date-picker {
+      background-color: #f8f9fa;
+    }
+
+    /* Custom Button Styles to Resemble Tailwind CSS */
+    .btn-primary {
+      background-color: #1e90ff; /* Blue */
+      color: #fff; /* White text */
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0073e6; /* Darker Blue on hover */
+    }
+
+    /* Remove the box-shadow for focus and active states */
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.focus,
+    .btn-primary.active {
+      box-shadow: none !important; /* Remove the box-shadow */
+    }
+
+    .btn-secondary {
+      background-color: #6b7280; /* Gray */
+      color: #fff; /* White text */
+      transition: background-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #4b5563; /* Darker Gray on hover */
+    }
+
+    /* Remove the box-shadow for focus and active states */
+    .btn-secondary:focus,
+    .btn-secondary:active,
+    .btn-secondary.focus,
+    .btn-secondary.active {
+      box-shadow: none !important; /* Remove the box-shadow */
+    }
+
+    /* Apply Tailwind-like Padding and Margin Classes */
+    .btn-sm {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    #submitBtn, #resetBtn {
+      width: 100%;
+      margin-bottom: 10px; /* Added bottom margin for spacing */
+    }
+
+    #firestoreSuccess, #firestoreError {
+      display: none;
+      margin-top: 10px;
+    }
+ 
+    /* Custom Styles to Change Active and Focus Colors to Black */
+    .form-control:focus {
+      border-color: black;
+      box-shadow: 0 0 0.1rem black;
+    }
+
+    .form-control:active {
+      border-color: black;
+      box-shadow: 0 0 0.1rem black;
+    }    
+
+    /* Overlay Spinner Styles */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      border: 5px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 5px solid blue;
+      border-right: 5px solid green;
+      border-bottom: 5px solid red;
+      border-left: 5px solid pink;
+      width: 150px;
+      height: 150px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+
+<body oncontextmenu="return false">
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="fixed-top d-flex align-items-center topbar-inner-pages">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill" ></i><span id="user" class="message">Hello, <email-id></email-id></span>
+        <i class="success"></i> Welcome back
+      </div>
+      <div class="office-address d-none d-md-block">
+        <a  class="btn scrollto" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="welcome.html">C-Academy</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href=index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="welcome.html">Home</a></li>                  
+          <li><a href="sms&mail.html">SMS & Mail</a></li>
+          <li><a href="faq.html">F.A.Q</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="service-level-agreement.html">SLA</a></li>
+          <li><a href="offers.html">Carnival Offer</a></li>
+          <li><a href="tutorials.html">Tutorials</a></li>
+          <!--<li><a href="olt-information.html">OLT Info</a></li>-->
+          <li><a href="zonewiseowner.html">Owner</a></li>
+          <li><a href="mediation.html">Mediation</a></li>
+          <li><a href="contacts.html">FOC List</a></li>
+          <li><a class="active" href="leave.html">Leave</a></li>
+  <!--    <li class="dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="find.html">Know More</a></li>
+              <li><a href="wifihut.html">Wifi hut</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->        
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+        <!-- Floating Social Media bar Starts -->
+        <div class="side-bar-navigation--wrapper">
+          <div class="side-bar-navigation">
+              <div class="side-bar-navigation--element">
+                    <a href="welcome.html#about-carnival">
+                      <img src="assets/img/information-100.png"/>
+                        <span>information</span>
+                    </a>
+              </div>
+              <div class="side-bar-navigation--element">
+                     <a href="welcome.html#router">
+                          <img src="assets/img/r-100.png"/>
+                          <span>router stock</span>
+                     </a>
+              </div>
+              <div class="side-bar-navigation--element">
+                    <a href="welcome.html#office-address">
+                      <img src="assets/img/a-100.png"/>
+                        <span>address</span>
+                    </a>
+              </div>
+              <div class="side-bar-navigation--element">
+                    <a href="welcome.html#family-package">
+                      <img src="assets/img/p-100.png"/>
+                        <span>packages</span>
+                    </a>
+              </div>
+              <div class="side-bar-navigation--element">
+                    <a href="welcome.html#link">
+                      <img src="assets/img/l-100.png"/>
+                        <span>links</span>
+                    </a>
+              </div>
+           </div>
+        </div>
+        <!-- Floating Social Media bar Ends -->
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Leave request</h2>
+          <ol>
+            <li><a href="welcome.html">Home</a></li>
+            <li>Leave</li>
+          </ol>
+        </div>
+
+      </div>
+    </div><!-- End Breadcrumbs -->	
+
+    <!-- ======= SMS Section ======= -->
+    <section id="section" class="section">
+      <div class="container" data-aos="fade-up">        
+              <div class="container form-con mt-5">
+                <h2 class="mb-4">Leave Request</h2><hr>
+                <form id="leaveForm">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="dateRange">Select Date Range:</label>
+                    <input type="text" class="form-control date-picker" id="dateRange" name="dateRange" placeholder="Select one or more dates" required>
+                  </div>
+            
+                  <button type="submit" class="btn btn-primary" id="submitBtn">Request Leave <i class="fas fa-paper-plane"></i></button>
+                  <button type="button" class="btn btn-secondary" id="resetBtn">Clear Form <i class="fas fa-eraser"></i></button>
+                </form>
+            
+                <!-- Overlay Spinner -->
+                <div class="overlay" id="overlay">
+                  <div class="spinner"></div>
+                </div>
+            
+                <!-- Firestore Success Message -->
+                <div class="alert alert-success" id="firestoreSuccess">
+                  <!-- Success message will be inserted here -->
+                </div>
+            
+                <!-- Firestore Error Message -->
+                <div class="alert alert-danger" id="firestoreError">
+                  <!-- Error message will be inserted here -->
+                </div>
+              </div>           
+      </div>
+    </section><!-- End SMS Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="link">
+    <div class="link-top">
+      
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 link-links">
+            <h4>System Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://45.125.222.252/" target="_blank">SIP</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/newcrm/index.php" target="_blank">CRM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.27.149/otrs/index.pl" target="_blank">OTRS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/corporate_panel/index.php" target="_blank">CFB List</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://rural-wifi.carnival.com.bd/radiusmanager/admin.php?cont=list_users" target="_blank">Rural Radius</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 link-links">
+            <h4>Monitor Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://reportpanel.carnival.com.bd/olt/monitoring_panel/index.php" target="_blank">Proactive Monitoring</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.27.154/cacti/index.php" target="_blank">Cacti</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://mxtoolbox.com/blacklists.aspx" target="_blank">IP Blacklists</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.218.24.182/login" target="_blank">LibreNMS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://45.125.222.252/" target="_blank">Roundcube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 link-links">
+            <h4>Payment Tools</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.bkashcluster.com:9081/mr_portal/" target="_blank">bKash (GP)</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.123.9.149:8088/" target="_blank">bKash SOAP</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://103.11.136.25:7004/mbwebreport/" target="_blank">Rocket</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://partner.mynagad.com:8163/index" target="_blank">Nagad</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://manage.portwallet.com/admin/user" target="_blank">Portwallet</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 link-info">
+            <h3>External Tools</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="https://app.yeshello.chat/space/63848/message" target="_blank" class="twitter"><i><img src="assets/img/yeshello.png"  width="17" height="17"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://web.whatsapp.com/" target="_blank" class="instagram"><i class="bx bi bi-whatsapp"></i></a>
+              <a href="https://login.live.com/" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Contact Center</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    
+        <script src="assets/vendor/firebase/firebase.js"></script>
+        <script src="assets/vendor/firebase/welcome.js"></script>   
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+  <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <script type="module">
+     // Initialize Firebase with your project's configuration settings
+     var firebaseConfig = {
+      apiKey: "AIzaSyALz24iKFZvNfCc0Z7GM_S-4NuqxZrqVtE",
+      authDomain: "leave-portal-1975e.firebaseapp.com",
+      projectId: "leave-portal-1975e",
+      storageBucket: "leave-portal-1975e.appspot.com",
+      messagingSenderId: "690882610613",
+      appId: "1:690882610613:web:023d2c06a911b878d905fc"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+
+    // Initialize Flatpickr date picker
+    flatpickr("#dateRange", {
+      mode: "multiple",
+      dateFormat: "m/d/Y", // Set the date format
+    });
+
+    // Event listener for form submission
+    document.getElementById('leaveForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent default form submission
+      showOverlaySpinner(); // Show the overlay spinner
+
+      // Perform form submission asynchronously
+      submitForm()
+        .then(function () {
+          hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
+        });
+    });
+
+    // Event listener for the "Clear Form" button
+    document.getElementById('resetBtn').addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default button behavior
+      resetForm();
+    });    
+
+    // Function to show the overlay spinner
+    function showOverlaySpinner() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    // Function to hide the overlay spinner
+    function hideOverlaySpinner() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    // Function to submit leave request to Firestore
+    function submitForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var selectedDates = document.getElementById('dateRange').value;
+
+      if (name === "" || !validateEmail(email) || !selectedDates) {
+        // Handle validation errors as needed
+        hideOverlaySpinner(); // Hide the overlay spinner if there's an error
+        return;
+      }
+
+      var selectedDateArray = selectedDates.split(',');
+
+      // Check leave quota for each selected date
+      var leaveQuotaExceeded = false;
+      var dateCheckPromises = selectedDateArray.map(function (date) {
+        return new Promise(function (resolve, reject) {
+          var leaveCountRef = db.collection('leaveCounts').doc(date.trim());
+
+          db.runTransaction(function (transaction) {
+            return transaction.get(leaveCountRef).then(function (doc) {
+              if (!doc.exists || doc.data().count < 3) {
+                // Leave quota not exceeded for this date, increment the count
+                transaction.set(leaveCountRef, { count: (doc.data()?.count || 0) + 1 });
+                resolve();
+              } else {
+                // Leave quota exceeded for this date
+                leaveQuotaExceeded = true;
+                showAlert("danger", "Leave quota exceeded for " + date + ". Please choose an alternate date.");
+                reject();
+              }
+            });
+          })
+          .catch(function (error) {
+            console.error("Error checking leave quota:", error);
+            reject();
+          });
+        });
+      });
+
+      Promise.all(dateCheckPromises)
+        .then(function () {
+          if (!leaveQuotaExceeded) {
+            // Leave quota not exceeded, proceed to submit the request
+            db.collection('leaveRequests').add({
+              name: name,
+              email: email,
+              selectedDates: selectedDateArray
+            })
+            .then(function () {
+              // Handle success
+              showAlert("success", "Leave request submitted successfully!");
+              resetForm();
+            })
+            .catch(function (error) {
+              // Handle error
+              showAlert("danger", "Error submitting leave request.");
+            })
+            .finally(function () {
+              hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
+            });
+          }
+        })
+        .catch(function () {
+          // One or more date checks indicated quota exceeded, do not submit the request
+          hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
+        });
+    }
+
+    // Function to validate email address using a regular expression
+    function validateEmail(email) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+
+    // Function to show a Bootstrap alert with a message and automatically hide it after 5 seconds
+    function showAlert(type, message) {
+      var alertElement = document.getElementById(type === "success" ? 'firestoreSuccess' : 'firestoreError');
+      alertElement.innerHTML = '<i class="fas fa-' + (type === "success" ? 'check-circle' : 'exclamation-circle') + '"></i> ' + message;
+      alertElement.style.display = 'block';
+
+      // Automatically hide the alert after 5 seconds
+      setTimeout(function () {
+        alertElement.style.display = 'none';
+      }, 5000); // 5000 milliseconds = 5 seconds
+    }
+
+    // Function to reset the form fields
+    function resetForm() {
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+
+      // Clear the Flatpickr instance
+      var dateRangeInput = document.getElementById('dateRange');
+      dateRangeInput._flatpickr.clear();
+
+      // Reset the form
+      document.getElementById('leaveForm').reset();
+    }
+  </script>
+
+</body>
+
+</html>
