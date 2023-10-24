@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>OLT-Information | C-Academy</title>
+  <title>Leave request | C-Academy</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -32,7 +32,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <style>
-
     .form-con {
       max-width: 600px;
       margin-top: -30px !important;
@@ -375,8 +374,8 @@
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     
         <script src="assets/vendor/firebase/firebase.js"></script>
         <script src="assets/vendor/firebase/welcome.js"></script>   
@@ -398,6 +397,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
+
   <script type="module">
      // Initialize Firebase with your project's configuration settings
      var firebaseConfig = {
@@ -414,138 +414,153 @@
 
     // Initialize Flatpickr date picker
     flatpickr("#dateRange", {
-      mode: "multiple",
-      dateFormat: "m/d/Y", // Set the date format
-    });
-
-    // Event listener for form submission
-    document.getElementById('leaveForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent default form submission
-      showOverlaySpinner(); // Show the overlay spinner
-
-      // Perform form submission asynchronously
-      submitForm()
-        .then(function () {
-          hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
-        });
-    });
-
-    // Event listener for the "Clear Form" button
-    document.getElementById('resetBtn').addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default button behavior
-      resetForm();
-    });    
-
-    // Function to show the overlay spinner
-    function showOverlaySpinner() {
-      document.getElementById('overlay').style.display = 'flex';
-    }
-
-    // Function to hide the overlay spinner
-    function hideOverlaySpinner() {
-      document.getElementById('overlay').style.display = 'none';
-    }
-
-    // Function to submit leave request to Firestore
-    function submitForm() {
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var selectedDates = document.getElementById('dateRange').value;
-
-      if (name === "" || !validateEmail(email) || !selectedDates) {
-        // Handle validation errors as needed
-        hideOverlaySpinner(); // Hide the overlay spinner if there's an error
-        return;
-      }
-
-      var selectedDateArray = selectedDates.split(',');
-
-      // Check leave quota for each selected date
-      var leaveQuotaExceeded = false;
-      var dateCheckPromises = selectedDateArray.map(function (date) {
-        return new Promise(function (resolve, reject) {
-          var leaveCountRef = db.collection('leaveCounts').doc(date.trim());
-
-          db.runTransaction(function (transaction) {
-            return transaction.get(leaveCountRef).then(function (doc) {
-              if (!doc.exists || doc.data().count < 3) {
-                // Leave quota not exceeded for this date, increment the count
-                transaction.set(leaveCountRef, { count: (doc.data()?.count || 0) + 1 });
-                resolve();
-              } else {
-                // Leave quota exceeded for this date
-                leaveQuotaExceeded = true;
-                showAlert("danger", "Leave quota exceeded for " + date + ". Please choose an alternate date.");
-                reject();
-              }
-            });
-          })
-          .catch(function (error) {
-            console.error("Error checking leave quota:", error);
-            reject();
-          });
-        });
+        mode: "multiple",
+        dateFormat: "m/d/Y", // Set the date format
       });
-
-      Promise.all(dateCheckPromises)
-        .then(function () {
-          if (!leaveQuotaExceeded) {
-            // Leave quota not exceeded, proceed to submit the request
-            db.collection('leaveRequests').add({
-              name: name,
-              email: email,
-              selectedDates: selectedDateArray
-            })
-            .then(function () {
-              // Handle success
+  
+      // Event listener for form submission
+      document.getElementById('leaveForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission
+        showOverlaySpinner(); // Show the overlay spinner
+  
+        // Perform form submission asynchronously
+        submitForm()
+          .then(function () {
+            hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
+          });
+      });
+  
+      // Event listener for the "Clear Form" button
+      document.getElementById('resetBtn').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default button behavior
+        resetForm();
+      });    
+  
+      // Function to show the overlay spinner
+      function showOverlaySpinner() {
+        document.getElementById('overlay').style.display = 'flex';
+      }
+  
+      // Function to hide the overlay spinner
+      function hideOverlaySpinner() {
+        document.getElementById('overlay').style.display = 'none';
+      }
+  
+      function hasUserAlreadyApplied(email, date) {
+      return db.collection('leaveRequests')
+          .where('email', '==', email)
+          .where('selectedDates', 'array-contains', date)
+          .get()
+          .then((querySnapshot) => {
+          return !querySnapshot.empty;
+          })
+          .catch((error) => {
+          console.error("Error checking if user has already applied:", error);
+          return false;
+          });
+      }
+  
+      // Function to submit leave request to Firestore
+      async function submitForm() {
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const selectedDates = document.getElementById('dateRange').value;
+  
+          if (name === "" || !validateEmail(email) || !selectedDates) {
+              // Handle validation errors as needed
+              hideOverlaySpinner(); // Hide the overlay spinner if there's an error
+              return;
+          }
+  
+          const selectedDateArray = selectedDates.split(',');
+  
+          // Check if the user has already applied for any of the selected dates
+          const existingApplicationPromises = selectedDateArray.map(async (date) => {
+              const hasApplied = await hasUserAlreadyApplied(email, date.trim());
+              if (hasApplied) {
+              showAlert("danger", "You have already applied for leave on " + date + ". Please choose an alternate date.");
+              throw new Error("User has already applied for leave on " + date);
+              }
+          });
+  
+          try {
+              await Promise.all(existingApplicationPromises);
+  
+              // Check leave quota for each selected date
+              let leaveQuotaExceeded = false;
+              const dateCheckPromises = selectedDateArray.map((date) => {
+              return new Promise((resolve, reject) => {
+                  const leaveCountRef = db.collection('leaveCounts').doc(date.trim());
+                  db.runTransaction((transaction) => {
+                  return transaction.get(leaveCountRef).then((doc) => {
+                      if (!doc.exists || doc.data().count < 3) {
+                      // Leave quota not exceeded for this date, increment the count
+                      transaction.set(leaveCountRef, { count: (doc.data()?.count || 0) + 1 });
+                      resolve();
+                      } else {
+                      // Leave quota exceeded for this date
+                      leaveQuotaExceeded = true;
+                      showAlert("danger", "Leave quota exceeded for " + date + ". Please choose an alternate date.");
+                      reject();
+                      }
+                  });
+                  })
+                  .catch((error) => {
+                  console.error("Error checking leave quota:", error);
+                  reject();
+                  });
+              });
+              });
+  
+              await Promise.all(dateCheckPromises);
+  
+              if (!leaveQuotaExceeded) {
+              // Leave quota not exceeded and no existing applications, proceed to submit the request
+              await db.collection('leaveRequests').add({
+                  name: name,
+                  email: email,
+                  selectedDates: selectedDateArray
+              });
               showAlert("success", "Leave request submitted successfully!");
               resetForm();
-            })
-            .catch(function (error) {
-              // Handle error
-              showAlert("danger", "Error submitting leave request.");
-            })
-            .finally(function () {
-              hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
-            });
+              }
+          } catch (error) {
+              // Handle any errors
+          } finally {
+              hideOverlaySpinner();
           }
-        })
-        .catch(function () {
-          // One or more date checks indicated quota exceeded, do not submit the request
-          hideOverlaySpinner(); // Hide the overlay spinner when the process is complete
-        });
-    }
-
-    // Function to validate email address using a regular expression
-    function validateEmail(email) {
-      var re = /\S+@\S+\.\S+/;
-      return re.test(email);
-    }
-
-    // Function to show a Bootstrap alert with a message and automatically hide it after 5 seconds
-    function showAlert(type, message) {
-      var alertElement = document.getElementById(type === "success" ? 'firestoreSuccess' : 'firestoreError');
-      alertElement.innerHTML = '<i class="fas fa-' + (type === "success" ? 'check-circle' : 'exclamation-circle') + '"></i> ' + message;
-      alertElement.style.display = 'block';
-
-      // Automatically hide the alert after 5 seconds
-      setTimeout(function () {
-        alertElement.style.display = 'none';
-      }, 5000); // 5000 milliseconds = 5 seconds
-    }
-
-    // Function to reset the form fields
-    function resetForm() {
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-
-      // Clear the Flatpickr instance
-      var dateRangeInput = document.getElementById('dateRange');
-      dateRangeInput._flatpickr.clear();
-
-      // Reset the form
-      document.getElementById('leaveForm').reset();
-    }
+          }
+  
+      // Function to validate email address using a regular expression
+      function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+      }
+  
+      // Function to show a Bootstrap alert with a message and automatically hide it after 5 seconds
+      function showAlert(type, message) {
+        var alertElement = document.getElementById(type === "success" ? 'firestoreSuccess' : 'firestoreError');
+        alertElement.innerHTML = '<i class="fas fa-' + (type === "success" ? 'check-circle' : 'exclamation-circle') + '"></i> ' + message;
+        alertElement.style.display = 'block';
+  
+        // Automatically hide the alert after 5 seconds
+        setTimeout(function () {
+          alertElement.style.display = 'none';
+        }, 5000); // 5000 milliseconds = 5 seconds
+      }
+  
+      // Function to reset the form fields
+      function resetForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+  
+        // Clear the Flatpickr instance
+        var dateRangeInput = document.getElementById('dateRange');
+        dateRangeInput._flatpickr.clear();
+  
+        // Reset the form
+        document.getElementById('leaveForm').reset();
+      }
   </script>
 
 </body>
